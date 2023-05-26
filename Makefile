@@ -1,0 +1,54 @@
+NAME = push_swap
+
+SRCS = ./utils/check_args.c ./utils/ft_split.c ./utils/ft_strlen.c \
+		./utils/ft_strjoin.c
+
+OBJS = ${SRCS:.c=.o}
+
+CC = cc
+
+RM = rm -rf
+
+CFLAGS = -Wall -Wextra -Werror
+
+NONE	=	'\033[0m'
+GREEN	=	'\033[33m'
+GRAY	=	'\033[2;37m'
+ITALIC	=	'\033[3m'
+UNDERLINE	=	'\033[4m'
+RED	=	'\033[91m'
+
+# Green="\e[1;32m"
+
+# Blue=$'\e[1;34m'
+
+
+.c.o	:
+			@echo "Making $<..." 
+			@$(CC) -c $< -o $(<:.c=.o)
+
+all		:	$(NAME)
+
+$(NAME)	:	$(OBJS)
+			@echo "     → Compiling $(NAME)..."
+			@$(CC) $(OBJS) -o $(NAME)
+			@echo ${GREEN}"***** ***** ***** ***** *** *    **** ****"
+			@sleep 0.1
+			@echo ${GREEN}"*     *   * * * * *   *  *  *    *    *   *" 
+			@sleep 0.1
+			@echo ${GREEN}"*     *   * * * * *****  *  *    **** *   *"
+			@sleep 0.1
+			@echo ${GREEN}"*     *   * * * * *      *  *    *    *   *" 
+			@sleep 0.1
+			@echo ${GREEN}"***** ***** * * * *     *** **** **** ****" 
+
+
+clean	:
+			@echo ${RED} "     - Removing object files..."
+			@$(RM) $(OBJS) $(BOBJS)
+
+fclean	:	clean
+			@echo "     - Removing $(NAME)..." $(NONE)
+			@$(RM) $(NAME)
+
+re		:	fclean all
