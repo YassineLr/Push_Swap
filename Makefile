@@ -1,7 +1,8 @@
 NAME = push_swap
 
 SRCS = ./utils/check_args.c ./utils/ft_split.c ./utils/ft_strlen.c \
-		./utils/ft_strjoin.c ./utils/check_int.c ./utils/ft_atoi.c
+		./utils/ft_strjoin.c ./utils/check_int.c ./utils/ft_atoi.c ./utils/ft_lstnew.c \
+		./utils/ft_lstadd_back.c
 
 OBJS = ${SRCS:.c=.o}
 

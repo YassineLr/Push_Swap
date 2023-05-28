@@ -9,8 +9,8 @@ char **joining_args(char **av)
 
     i = 1;
     
-    if(!av)
-            return(NULL);
+    if(!av[i])
+        return(NULL);
     stocked = NULL;
     temp = NULL;
     // printf("Hello dumb");
@@ -72,10 +72,12 @@ bool check_digits(char **str)
 	return (true);
 }
 
-int		*to_int_table(char **str)
+t_args		**args_to_list(char **str)
 {
 	int count;
-	int *tab;
+	t_args **args;
+	t_args *new;
+	t_args *courant;
 	int i;
 	int j;
 	int length;
@@ -89,23 +91,29 @@ int		*to_int_table(char **str)
 		exit(127);
 	}
 	while (str[i])
-		i++;
-	length = i;
-	i = 0;
-	tab = (int*)malloc(length*sizeof(int));
-	printf("this is the lenght : %d\n",length);
-	while (i < length)
 	{
-		// printf("this is the iteration number : %d\n",i);
-		tab[i] = ft_atoi(str[i]);
+		new = ft_lstnew(ft_atoi(str[i]));
+		ft_lstadd_back(args,new);
 		i++;
 	}
-	printf("%d\n",i);
-	// printf("%d\n",j);
-	i = 0;
-	
-	printf("last %d\n",i);
-	return(tab);
+	// courant = *args;
+	// while(courant->next)
+	// {
+	// 	printf("%d",courant->arg);
+	// 	courant = courant->next;
+	// }
+	// printf("%d\n",i);
+	// // printf("%d\n",j);
+	// i = 0;
+	// while (i < length)
+	// {
+	// 	printf("this is the iteration number : %d\n",tab[i]);
+	// 	j++;
+ 	//    	// printf("%d\n",tab[i]);	Z	
+	// 	i++;
+	// }
+	// printf("last %d\n",i);
+	return(args);
 }
 
 int main(int ac, char **av)
@@ -113,15 +121,27 @@ int main(int ac, char **av)
     char *str;
     char **splited;
     int i = 0;
-	int *tab;
+	int j = 0;
+	t_args *args;
 	int flag;
 
-	tab = to_int_table(joining_args(av));
-	while (tab[i])
-	{
-		printf("this is the iteration number : %d\n",i);
- 	   	// printf("%d\n",tab[i]);	Z	
-		i++;
-	}
+	// char **args;
+	// args = joining_args(av);
+	// while (args[i])
+	// {
+	// 	printf("%s\n", args[i]);
+	// 	i++;
+	// }
+	
+	args = *args_to_list(joining_args(av));
+
+	// while (tab[i])
+	// {
+	// 	printf("this is the iteration number : %d\n",tab[i]);
+	// 	j++;
+ 	//    	// printf("%d\n",tab[i]);	Z	
+	// 	i++;
+	// }
+	// printf("==> %d\n", j);
     // printf("%d",flag);
 }
