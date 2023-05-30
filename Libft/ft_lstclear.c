@@ -6,15 +6,17 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 03:14:20 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/19 05:16:54 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/05/30 23:57:25 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
+#include "../push_swap.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+
+void	ft_lstclear(t_args **lst, void (*del)(int))
 {
-	t_list	*tmp;
+	t_args	*tmp;
 
 	if (!*lst)
 		return ;

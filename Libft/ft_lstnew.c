@@ -6,20 +6,21 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 03:16:10 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/05/30 17:19:38 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/05/30 23:18:30 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "../push_swap.h"
 
-t_list	*ft_lstnew(void *content)
+t_args	*ft_lstnew(int	content)
 {
-	t_list	*new;
+	t_args	*new;
 
-	new = (t_list *)malloc (sizeof(t_list));
+	new = (t_args *)malloc (sizeof(t_args));
 	if (!new)
 		return (NULL);
-	new -> content = content;
+	new -> arg = content;
 	new -> next = NULL;
 	return (new);
 }

@@ -6,17 +6,18 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 03:14:31 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/19 02:18:39 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/05/30 23:13:28 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "../push_swap.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_args *lst, void (*del)(int))
 {
 	if (!lst)
 		return ;
 	if (del)
-		del(lst->content);
+		del(lst->arg);
 	free(lst);
 }

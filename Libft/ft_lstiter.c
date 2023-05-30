@@ -6,22 +6,22 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 03:15:28 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/20 20:23:32 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/05/30 23:14:08 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_args *lst, void (*f)(int))
 {
-	t_list	*courant;
+	t_args	*courant;
 
 	if (!lst || !f)
 		return ;
 	courant = lst;
 	while (courant)
 	{
-		(*f)(courant -> content);
+		(*f)(courant -> arg);
 		courant = courant -> next;
 	}
 }

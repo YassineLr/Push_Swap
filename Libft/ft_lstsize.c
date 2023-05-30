@@ -6,15 +6,16 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 03:17:01 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/18 18:14:46 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/05/30 23:17:46 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "../push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_args *lst)
 {
-	t_list	*courant;
+	t_args	*courant;
 	int		size;
 
 	size = 0;

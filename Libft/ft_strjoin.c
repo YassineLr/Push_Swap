@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 12:46:49 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/21 17:38:54 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/05/30 19:01:02 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	if (!s1 || !s2)
-		return (0);
+	if(!s1)
+		return(ft_strdup(s2));
 	j_str = (char *) malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!j_str)
 		return (NULL);
