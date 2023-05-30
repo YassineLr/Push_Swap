@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/27 23:49:19 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/05/28 18:25:40 by ylarhris         ###   ########.fr       */
+/*   Created: 2022/10/18 03:15:28 by ylarhris          #+#    #+#             */
+/*   Updated: 2022/10/20 20:23:32 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include"libft.h"
 
-t_args	*ft_lstnew(int arg)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_args	*new;
+	t_list	*courant;
 
-	new = (t_args *)malloc (sizeof(t_args));
-	if (!new)
-		return (NULL);
-	new -> arg = arg;
-	new -> next = NULL;
-	return (new);
+	if (!lst || !f)
+		return ;
+	courant = lst;
+	while (courant)
+	{
+		(*f)(courant -> content);
+		courant = courant -> next;
+	}
 }

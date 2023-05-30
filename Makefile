@@ -1,55 +1,51 @@
-NAME = push_swap
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/05/30 16:03:04 by ylarhris          #+#    #+#              #
+#    Updated: 2023/05/30 17:08:03 by ylarhris         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-SRCS = ./utils/check_args.c ./utils/ft_split.c ./utils/ft_strlen.c \
-		./utils/ft_strjoin.c ./utils/check_int.c ./utils/ft_atoi.c ./utils/ft_lstnew.c \
-		./utils/ft_lstadd_back.c
+NAME		=	push_swap
+NAME_BONUS	=	checker
+CC			=	cc
+# CFLAGS		=	-Werror -Wextra -Wall 
+RM			=	rm -rf
+SRCS 		= ./utils/check_args.c ./utils/check_int.c 
+				
+				
+SRCS_BONUS	=	bonus/push_swap_b.c bonus/get_next_line_bonus.c \
+				bonus/get_next_line_utils_bonus.c bonus/push.c \
+				bonus/reverse_rotate.c bonus/rotate.c \
+				bonus/swap.c bonus/utils.c bonus/stack.c  bonus/blabla.c \
+				
+				
+OBJS		= ${SRCS:.c=.o}
 
-OBJS = ${SRCS:.c=.o}
+OBJS_BONUS	= ${SRCS_BONUS:.c=.o}
 
-CC = cc
+all			:	$(NAME)
+bonus		:	$(NAME_BONUS)
 
-RM = rm -rf
+$(NAME)		: $(OBJS)
+			make -C libft
+			$(CC)  $(OBJS) libft/libft.a -o $(NAME)
+			
+			
+$(NAME_BONUS) 	: $(OBJS_BONUS)
+				make -C libft
+				$(CC) $(OBJS_BONUS) libft/libft.a -o $(NAME_BONUS)
 
-CFLAGS = -Wall -Wextra -Werror
+clean		:
+			$(RM) $(OBJS) $(OBJS_BONUS)
+			make clean -C libft
 
-NONE	=	'\033[0m'
-GREEN	=	'\033[33m'
-GRAY	=	'\033[2;37m'
-ITALIC	=	'\033[3m'
-UNDERLINE	=	'\033[4m'
-RED	=	'\033[91m'
+fclean		: clean
+			$(RM) $(NAME) $(NAME_BONUS)
+			make fclean -C libft
 
-# Green="\e[1;32m"
-
-# Blue=$'\e[1;34m'
-
-
-.c.o	:
-			@echo "Making $<..." 
-			@$(CC) -c $< -o $(<:.c=.o)
-
-all		:	$(NAME)
-
-$(NAME)	:	$(OBJS)
-			@echo "     → Compiling $(NAME)..."
-			@$(CC) $(OBJS) -o $(NAME)
-			@echo ${GREEN}"***** ***** ***** ***** *** *    **** ****"
-			@sleep 0.1
-			@echo ${GREEN}"*     *   * * * * *   *  *  *    *    *   *" 
-			@sleep 0.1
-			@echo ${GREEN}"*     *   * * * * *****  *  *    **** *   *"
-			@sleep 0.1
-			@echo ${GREEN}"*     *   * * * * *      *  *    *    *   *" 
-			@sleep 0.1
-			@echo ${GREEN}"***** ***** * * * *     *** **** **** ****" 
-
-
-clean	:
-			@echo ${RED} "     - Removing object files..."
-			@$(RM) $(OBJS) $(BOBJS)
-
-fclean	:	clean
-			@echo "     - Removing $(NAME)..." $(NONE)
-			@$(RM) $(NAME)
-
-re		:	fclean all
+re			: fclean all

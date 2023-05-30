@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_args.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/30 17:12:35 by ylarhris          #+#    #+#             */
+/*   Updated: 2023/05/30 17:12:35 by ylarhris         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 char **joining_args(char **av)
@@ -74,13 +86,13 @@ bool check_digits(char **str)
 
 t_args		**args_to_list(char **str)
 {
-	int count;
-	t_args **args;
-	t_args *new;
-	t_args *courant;
-	int i;
-	int j;
-	int length;
+	int		count;
+	t_args	**args;
+	t_args	*new;
+	t_args	*courant;
+	int 	i;
+	int 	j;
+	int 	length;
 
 	j = 0;
 	i = 0;
@@ -118,12 +130,12 @@ t_args		**args_to_list(char **str)
 
 int main(int ac, char **av)
 {
-    char *str;
-    char **splited;
-    int i = 0;
-	int j = 0;
-	t_args *args;
-	int flag;
+    char 	*str;
+    char	**splited;
+    int 	i = 0;
+	int 	j = 0;
+	t_args	*args;
+	int 	flag;
 
 	// char **args;
 	// args = joining_args(av);

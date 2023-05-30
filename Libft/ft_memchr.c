@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/27 23:53:41 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/05/27 23:55:42 by ylarhris         ###   ########.fr       */
+/*   Created: 2022/10/05 16:39:22 by ylarhris          #+#    #+#             */
+/*   Updated: 2022/10/21 16:17:00 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void	ft_lstadd_back(t_args **lst, t_args *new)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	t_args	*courant;
+	size_t			i;
+	unsigned char	*t__t;
+	unsigned char	tmp;
 
-	courant = *lst;
-	if (!*lst)
-		*lst = new;
-	else
+	tmp = (unsigned char)c;
+	t__t = (unsigned char *)s;
+	i = 0;
+	while (i < n)
 	{
-		while (courant -> next)
-			courant = courant -> next;
-		courant -> next = new;
+		if (t__t[i] == tmp)
+			return ((void *)s + i);
+		i++;
 	}
+	return (NULL);
 }
