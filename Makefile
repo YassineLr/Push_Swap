@@ -6,7 +6,7 @@
 #    By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/30 16:03:04 by ylarhris          #+#    #+#              #
-#    Updated: 2023/05/31 15:46:43 by ylarhris         ###   ########.fr        #
+#    Updated: 2023/05/31 16:02:56 by ylarhris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ all		:	$(NAME)
 
 $(NAME)	:	$(OBJS)
 			@echo "     → Compiling $(NAME)..."
-			@$(CC) $(OBJS) -o $(NAME)
+			@$(CC) $(OBJS) -o $(NAME) -fsanitize=address -g3
 			@echo ${GREEN}"***** ***** ***** ***** *** *    **** ****"
 			@sleep 0.1
 			@echo ${GREEN}"*     *   * * * * *   *  *  *    *    *   *" 

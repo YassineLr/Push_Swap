@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 01:43:58 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/05/31 14:07:53 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:27:59 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 
 	courant = *lst;
 	if (!*lst)
+	{
 		*lst = new;
+	}
 	else
 	{
 		while (courant -> next)

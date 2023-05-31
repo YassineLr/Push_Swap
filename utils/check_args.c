@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 17:12:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/05/31 14:17:21 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:27:42 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,32 +139,35 @@ bool check_digits(char **str)
 
 t_stack **args_in_list(char **str)
 {
-	t_stack **args;
+	t_stack **stack;
 	t_stack *new;
 	t_stack *courant;
 	int		tmp;
 	int		i;
 	int		j;
 	
+	*stack =NULL;
 	if(!check_digits(str))
 	{
 		write(2, "Error !",8);
 		exit(127);
 	}
-	
+	i = 0;
 	while (str[i])
 	{
 		tmp = ft_atoi(str[i]);
 		new = ft_lstnew(tmp);
-		ft_lstadd_back(args, new);
+		printf("%d\n", new->content);
+		ft_lstadd_back(stack, new);
+		i++;
 	}
-	courant = *args;
-	while (courant->next)
-	{
-		printf("%d",courant->content);
-		courant = courant->next;
-	}
-	return(args);
+	// courant = *stack;
+	// while (courant->next)
+	// {
+	// 	printf("%d",courant->content);
+	// 	courant = courant->next;
+	// }
+	return(stack);
 }
 
 int main(int ac, char **av)
@@ -173,20 +176,24 @@ int main(int ac, char **av)
     char	**splited;
     int 	i = 0;
 	int 	j = 0;
-	t_stack	**args;
+	// t_stack	**args;
 	int 	flag;
 	char 	**arg;
 
+	if(ac > 1)
 	// char **args;
-	arg = joining_args(av+1);
+	{
+		arg = joining_args(av+1);
 	
-	i = 0;
+	// i = 0;
 	// while (arg[i])
 	// {
 	// 	printf("%s\n", arg[i]);
 	// 	i++;
 	// }
-	args = args_in_list(arg);
+
+		args_in_list(arg);
+	}
 	// arg = joining_args(av);
 
 	// while (tab[i])
