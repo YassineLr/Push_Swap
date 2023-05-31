@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 17:12:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/05/31 16:27:42 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/05/31 20:41:56 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,8 @@ char **joining_args(char **av)
 		}
         i++;
     }
-	// printf("%s\n", stocked);
-	j = 0;
+	splited = NULL;
     splited = ft_split(stocked, ' ');
-	// while (splited[j])
-	// {
-	// 	printf("%s\n",splited[j]);
-	// 	j++;
-	// }
     return(splited);
 }
 
@@ -149,6 +143,7 @@ t_stack **args_in_list(char **str)
 	*stack =NULL;
 	if(!check_digits(str))
 	{
+		printf("%s",str[0]);
 		write(2, "Error !",8);
 		exit(127);
 	}
@@ -176,23 +171,22 @@ int main(int ac, char **av)
     char	**splited;
     int 	i = 0;
 	int 	j = 0;
-	// t_stack	**args;
+	t_stack	**stack;
+	t_stack	*courant;
 	int 	flag;
 	char 	**arg;
 
+	*arg = NULL;
 	if(ac > 1)
-	// char **args;
 	{
 		arg = joining_args(av+1);
-	
-	// i = 0;
-	// while (arg[i])
-	// {
-	// 	printf("%s\n", arg[i]);
-	// 	i++;
-	// }
-
-		args_in_list(arg);
+		stack = args_in_list(arg);
+		courant = *stack;
+		while (courant->next)
+		{
+			printf("%d",courant->content);
+			courant = courant->next;
+		}
 	}
 	// arg = joining_args(av);
 
