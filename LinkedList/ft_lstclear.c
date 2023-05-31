@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 16:39:22 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/21 16:17:00 by ylarhris         ###   ########.fr       */
+/*   Created: 2022/10/18 03:14:20 by ylarhris          #+#    #+#             */
+/*   Updated: 2023/05/31 14:07:19 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_lstclear(t_stack **lst, void (*del)(int))
 {
-	size_t			i;
-	unsigned char	*t__t;
-	unsigned char	tmp;
+	t_stack	*tmp;
 
-	tmp = (unsigned char)c;
-	t__t = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	if (!*lst)
+		return ;
+	while (*lst)
 	{
-		if (t__t[i] == tmp)
-			return ((void *)s + i);
-		i++;
+		tmp = (*lst)-> next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
 	}
-	return (NULL);
 }

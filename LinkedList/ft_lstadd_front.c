@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 16:36:45 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/21 16:20:35 by ylarhris         ###   ########.fr       */
+/*   Created: 2022/10/18 03:13:51 by ylarhris          #+#    #+#             */
+/*   Updated: 2023/05/31 14:07:28 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_lstadd_front(t_stack **lst, t_stack *new)
 {
-	void	*new;
-
-	new = malloc(count * size);
-	if (!new)
-		return (0);
-	ft_bzero(new, count * size);
-	return (new);
+	if (!lst || !new)
+		return ;
+	new -> next = *lst;
+	*lst = new;
 }

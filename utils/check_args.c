@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 17:12:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/05/31 00:03:18 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:17:21 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,11 +137,11 @@ bool check_digits(char **str)
 // 	return(args);
 // }
 
-t_args **args_in_list(char **str)
+t_stack **args_in_list(char **str)
 {
-	t_args **args;
-	t_args *new;
-	t_args *courant;
+	t_stack **args;
+	t_stack *new;
+	t_stack *courant;
 	int		tmp;
 	int		i;
 	int		j;
@@ -161,7 +161,7 @@ t_args **args_in_list(char **str)
 	courant = *args;
 	while (courant->next)
 	{
-		printf("%d",courant->arg);
+		printf("%d",courant->content);
 		courant = courant->next;
 	}
 	return(args);
@@ -173,7 +173,7 @@ int main(int ac, char **av)
     char	**splited;
     int 	i = 0;
 	int 	j = 0;
-	t_args	**args;
+	t_stack	**args;
 	int 	flag;
 	char 	**arg;
 

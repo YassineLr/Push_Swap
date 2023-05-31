@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 16:53:47 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/21 16:13:14 by ylarhris         ###   ########.fr       */
+/*   Created: 2022/10/18 03:15:36 by ylarhris          #+#    #+#             */
+/*   Updated: 2023/05/31 14:06:44 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+t_stack	*ft_lstlast(t_stack *lst)
 {
-	size_t			i;
-	unsigned char	*t__t1;
-	unsigned char	*t__t2;
+	t_stack	*courant;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	t__t1 = (unsigned char *)s1;
-	t__t2 = (unsigned char *)s2;
-	while (i < n -1 && t__t1[i] == t__t2[i])
-		i++;
-	return (t__t1[i] - t__t2[i]);
+	if (!lst)
+		return (NULL);
+	courant = lst;
+	while (courant -> next)
+		courant = courant -> next;
+	return (courant);
 }

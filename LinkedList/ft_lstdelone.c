@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 03:16:10 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/05/30 23:18:30 by ylarhris         ###   ########.fr       */
+/*   Created: 2022/10/18 03:14:31 by ylarhris          #+#    #+#             */
+/*   Updated: 2023/05/31 14:07:02 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "../push_swap.h"
 
-t_args	*ft_lstnew(int	content)
+void	ft_lstdelone(t_stack *lst, void (*del)(int))
 {
-	t_args	*new;
-
-	new = (t_args *)malloc (sizeof(t_args));
-	if (!new)
-		return (NULL);
-	new -> arg = content;
-	new -> next = NULL;
-	return (new);
+	if (!lst)
+		return ;
+	if (del)
+		del(lst->content);
+	free(lst);
 }

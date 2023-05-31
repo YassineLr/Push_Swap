@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 16:38:19 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/05 16:38:30 by ylarhris         ###   ########.fr       */
+/*   Created: 2022/10/18 03:16:10 by ylarhris          #+#    #+#             */
+/*   Updated: 2023/05/31 14:06:27 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-int	ft_isprint(int c)
+t_stack	*ft_lstnew(int	content)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	t_stack	*new;
+
+	new = (t_stack *)malloc (sizeof(t_stack));
+	if (!new)
+		return (NULL);
+	new -> content = content;
+	new -> next = NULL;
+	return (new);
 }

@@ -6,11 +6,11 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:15:14 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/20 20:34:37 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:01:44 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 char	*ft_strdup(const char *src)
 {

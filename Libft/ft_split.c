@@ -6,11 +6,11 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 00:25:49 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/21 17:39:17 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:01:51 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 static int	ft_wdcount(char *str, char c)
 {

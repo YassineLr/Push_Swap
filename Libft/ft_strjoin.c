@@ -6,11 +6,11 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 12:46:49 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/05/30 19:01:02 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:01:37 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

@@ -6,11 +6,11 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 02:37:48 by ylarhris          #+#    #+#             */
-/*   Updated: 2022/10/10 02:37:49 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:02:03 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
