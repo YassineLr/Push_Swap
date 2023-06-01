@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 17:17:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/01 17:27:40 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/01 21:07:15 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/_types.h>
+#include<limits.h>
 
 
 typedef struct s_stack
@@ -27,6 +28,12 @@ typedef struct s_stack
     struct s_stack   *next;
 }t_stack;
 
+typedef struct s_all
+{
+    t_stack a;
+    t_stack b;
+    char    *error;
+}t_all;
 
 int	    ft_atoi(const char *s);
 void	ft_putchar_fd(char c, int fd);

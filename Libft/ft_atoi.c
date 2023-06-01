@@ -6,13 +6,31 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:35:23 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/01 17:24:53 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/01 22:11:36 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include<stdio.h>
 
+
+void check(int res, char s, int sign)
+{
+	unsigned long long check;
+
+	check = res * 10;
+	check = check + s - 48;
+	if(check > INT_MAX && sign == 1)
+	{
+		write(2, "ERROR!\n",7);
+		exit(127);
+	}
+	else if (check > ((-1)*INT_MAX-1) && sign == -1)
+	{
+		write(2, "ERROR!\n",7);
+		exit(127);
+	}
+}
 
 int	ft_atoi(const char *s)
 {
@@ -36,6 +54,7 @@ int	ft_atoi(const char *s)
 	{
 		res = res * 10;
 		res = res + s[i] - 48;
+		check(res,s[i],sign);
 		i++;
 	}
 	return (sign * res);

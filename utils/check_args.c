@@ -6,11 +6,53 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 17:12:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/01 20:18:48 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/01 21:54:43 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int is_empty(char *str)
+{
+	int i;
+	
+	i = 0;
+	if (str[i] == '\0')
+	{
+		write(2,"Error!\n",8);
+		exit(127);
+	}
+	if (!str)
+	{
+		write(2,"Error!\n",8);
+		exit(127);
+	}
+	while (str[i])
+	{
+		if(str[i] <= '9' && str[i] >= '0')
+			return(1);
+		i++;
+	}
+	write(2,"Error!\n",8);
+	exit(127);
+	return(0);
+}
+
+void check_max_min(char **av)
+{
+	int i;
+
+	i = 0;
+	while (av[i])
+	{
+		if (ft_atoi(av[i]) > INT_MAX || ft_atoi(av[i]) < INT_MIN)
+		{
+			write(2, "ERROR!",7);
+			exit(127);
+		}
+		i++;
+	}
+}
 
 char **joining_args(char **av)
 {
@@ -23,6 +65,9 @@ char **joining_args(char **av)
 	int k;
 
     i = 0;
+	while (av[i])
+		is_empty(av[i++]);
+	i = 0;
 	stocked = NULL;
     if(!av[i])
         return(NULL);
@@ -34,7 +79,7 @@ char **joining_args(char **av)
 	}
 	splited = NULL;
 	i = 0;
-    splited = ft_split(stocked, ' ');
+    splited = ft_split(stocked, ' ');	
     return(splited);
 }
 
@@ -65,7 +110,6 @@ void ft_duplicate(char **str)
         }
         i++;
     }
-    return ;
 }
 
 bool check_digits(char **str)
@@ -81,6 +125,7 @@ bool check_digits(char **str)
 	}
 	return (true);
 }
+
 
 t_stack **args_in_list(char **str)
 {
@@ -123,6 +168,7 @@ int main(int ac, char **av)
 	
 	if(ac > 1)
 	{
+		check_max_min(av);
 		arg = joining_args(av+1);
 		stack = args_in_list(arg);
 		courant = *stack;
