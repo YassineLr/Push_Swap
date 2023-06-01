@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-bool	check_int(const char *s)
+int	check_int(const char *s)
 {
 	int	res;
 	int	i;
@@ -16,8 +16,8 @@ bool	check_int(const char *s)
 	while (s[i])
 	{
 		if(s[i] > '9' || s[i] < '0')
-            return (false);
+            return (0);
         i++;
 	}
-	return (true);
+	return (1);
 }

@@ -6,11 +6,13 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 02:37:48 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/05/31 14:02:03 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/01 17:24:56 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+#include<stdio.h>
+
 
 void	ft_putchar_fd(char c, int fd)
 {

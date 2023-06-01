@@ -6,11 +6,13 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:35:23 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/05/31 14:02:09 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/01 17:24:53 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+#include<stdio.h>
+
 
 int	ft_atoi(const char *s)
 {

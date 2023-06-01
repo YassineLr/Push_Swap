@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 17:12:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/05/31 20:41:56 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/01 20:18:48 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,55 +23,50 @@ char **joining_args(char **av)
 	int k;
 
     i = 0;
+	stocked = NULL;
     if(!av[i])
         return(NULL);
-    while (av[i])
-    {
-		tmp = ft_split(av[i], ' ');
-		k = 0;
-		while(tmp[k])
-		{
-        	temp = ft_strjoin(stocked,tmp[k]);
-        	stocked = ft_strjoin(temp ," ");
-			k++;
-		}
-        i++;
-    }
+	while (av[i])
+	{
+		stocked = ft_strjoin(stocked, av[i]);		
+		stocked = ft_strjoin(stocked, " ");
+		i++;
+	}
 	splited = NULL;
+	i = 0;
     splited = ft_split(stocked, ' ');
     return(splited);
 }
 
-// void *duplicate(char **str)
-// {
-//     int i;
-//     int j;
-//     char *temp;
+void ft_duplicate(char **str)
+{
+    int i;
+    int j;
+	int to_compare;
+	int compare_with;
+    char *temp;
 
-//     i = 0;
-//     // j = 0;
-//     // printf("not ok!");
-//     if(!str)
-//         return(NULL);
-//     while (str[i])
-//     {
-//         j = i+1;
-//         temp = str[i];
-//         while (str[j])
-//         {
-//             // printf("i'm here habibi");
-//             if (!strcmp(str[j],temp))
-//             {
-//                 printf("%s",temp);
-//                 write(2,"error\n",7);
-//                 exit(127);
-//             }
-//             j++;
-//         }
-//         i++;
-//     }
-//     return(NULL);
-// }
+    i = 0;
+    if(!str)
+        return ;
+    while (str[i])
+    {
+		compare_with = ft_atoi(str[i]);
+        j = i+1;
+        while (str[j])
+        {
+			to_compare = ft_atoi(str[j]);
+            if(to_compare == compare_with)
+            {
+                write(2,"error\n",7);
+                exit(127);
+            }
+            j++;
+        }
+        i++;
+    }
+    return ;
+}
 
 bool check_digits(char **str)
 {
@@ -87,50 +82,6 @@ bool check_digits(char **str)
 	return (true);
 }
 
-// t_args		**args_to_list(char **str)
-// {
-// 	int		count;
-// 	t_args	**args;
-// 	t_args	*new;
-// 	t_args	*courant;
-// 	int 	i;
-// 	int 	j;
-// 	int 	length;
-
-// 	j = 0;
-// 	i = 0;
-// 	count = 0;
-// 	if(!check_digits(str))
-// 	{
-// 		write(2, "Error !",8);
-// 		exit(127);
-// 	}
-// 	while (str[i])
-// 	{
-// 		new = ft_lstnew(ft_atoi(str[i]));
-// 		ft_lstadd_back(args,new);
-// 		i++;
-// 	}
-// 	// courant = *args;
-// 	// while(courant->next)
-// 	// {
-// 	// 	printf("%d",courant->arg);
-// 	// 	courant = courant->next;
-// 	// }
-// 	// printf("%d\n",i);
-// 	// // printf("%d\n",j);
-// 	// i = 0;
-// 	// while (i < length)
-// 	// {
-// 	// 	printf("this is the iteration number : %d\n",tab[i]);
-// 	// 	j++;
-//  	//    	// printf("%d\n",tab[i]);	Z	
-// 	// 	i++;
-// 	// }
-// 	// printf("last %d\n",i);
-// 	return(args);
-// }
-
 t_stack **args_in_list(char **str)
 {
 	t_stack **stack;
@@ -140,28 +91,21 @@ t_stack **args_in_list(char **str)
 	int		i;
 	int		j;
 	
-	*stack =NULL;
+	*stack = NULL;
 	if(!check_digits(str))
 	{
-		printf("%s",str[0]);
 		write(2, "Error !",8);
 		exit(127);
 	}
+	ft_duplicate(str);
 	i = 0;
 	while (str[i])
 	{
 		tmp = ft_atoi(str[i]);
 		new = ft_lstnew(tmp);
-		printf("%d\n", new->content);
 		ft_lstadd_back(stack, new);
 		i++;
 	}
-	// courant = *stack;
-	// while (courant->next)
-	// {
-	// 	printf("%d",courant->content);
-	// 	courant = courant->next;
-	// }
 	return(stack);
 }
 
@@ -176,27 +120,16 @@ int main(int ac, char **av)
 	int 	flag;
 	char 	**arg;
 
-	*arg = NULL;
+	
 	if(ac > 1)
 	{
 		arg = joining_args(av+1);
 		stack = args_in_list(arg);
 		courant = *stack;
-		while (courant->next)
+		while (courant)
 		{
-			printf("%d",courant->content);
+			printf("%d\n",courant->content);
 			courant = courant->next;
 		}
 	}
-	// arg = joining_args(av);
-
-	// while (tab[i])
-	// {
-	// 	printf("this is the iteration number : %d\n",tab[i]);
-	// 	j++;
- 	//    	// printf("%d\n",tab[i]);	Z	
-	// 	i++;
-	// }
-	// printf("==> %d\n", j);
-    // printf("%d",flag);
 }
