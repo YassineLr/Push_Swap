@@ -6,7 +6,7 @@
 #    By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/30 16:03:04 by ylarhris          #+#    #+#              #
-#    Updated: 2023/06/01 20:20:59 by ylarhris         ###   ########.fr        #
+#    Updated: 2023/06/01 22:13:56 by ylarhris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,4 +69,3 @@ fclean	:	clean
 			@$(RM) $(NAME)
 
 re		:	fclean all
-
