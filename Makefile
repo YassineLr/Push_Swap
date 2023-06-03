@@ -6,7 +6,7 @@
 #    By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/30 16:03:04 by ylarhris          #+#    #+#              #
-#    Updated: 2023/06/03 22:07:56 by ylarhris         ###   ########.fr        #
+#    Updated: 2023/06/03 22:36:34 by ylarhris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS 		= ./utils/check_args.c ./utils/input_handling.c ./Libft/ft_atoi.c ./Libft
 				./LinkedList/ft_lstadd_back.c ./LinkedList/ft_lstadd_front.c ./LinkedList/ft_lstclear.c ./LinkedList/ft_lstdelone.c \
 				./LinkedList/ft_lstlast.c ./LinkedList/ft_lstnew.c ./LinkedList/ft_lstsize.c ./instructions/sa.c \
 				./instructions/sb.c ./instructions/ss.c ./instructions/ra.c ./instructions/rb.c ./instructions/pa.c ./instructions/pb.c \
-				./instructions/rr.c ./instructions/rra.c ./instructions/rrb.c ./instructions/rrr.c ./src/push_swap.c \
+				./instructions/rr.c ./instructions/rra.c ./instructions/rrb.c ./instructions/rrr.c ./src/push_swap.c ./src/sorting.c\
 				
 				
 OBJS = ${SRCS:.c=.o}

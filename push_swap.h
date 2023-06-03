@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 17:17:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/03 22:03:31 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/03 22:37:00 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,6 @@ void    rra(t_all *stack);
 void    rrb(t_all *stack);
 void    rrr(t_all *stack);
 
+// sorting
+void    sort2(t_all *stack);
 #endif
