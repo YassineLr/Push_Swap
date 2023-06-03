@@ -6,13 +6,12 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 17:17:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/01 22:55:58 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/02 17:22:44 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
-1
 #include <stdio.h>
 #include <stdbool.h>
 #include <unistd.h>
@@ -30,8 +29,10 @@ typedef struct s_stack
 
 typedef struct s_all
 {
-    t_stack a;
-    t_stack b;
+    t_stack *a;
+    t_stack *b;
+    int     size_a;
+    int     size_b;
     char    *error;
 }t_all;
 
@@ -52,9 +53,13 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new);
 void	ft_lstadd_front(t_stack **lst, t_stack *new);
 void	ft_lstdelone(t_stack *lst, void (*del)(int));
 void	ft_lstclear(t_stack **lst, void (*del)(int));
-t_stack  **args_to_list(char **str);
+void    args_to_list(char **str, t_all *stack);
 t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_lstnew(int	content);
 int	    ft_lstsize(t_stack *lst);
+
+// instructions
+
+void sa(t_all *stack);
 
 #endif

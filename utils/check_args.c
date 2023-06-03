@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 17:12:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/01 21:54:43 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/02 17:24:14 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,16 +127,17 @@ bool check_digits(char **str)
 }
 
 
-t_stack **args_in_list(char **str)
+void args_in_list(char **str, t_all *stack)
 {
-	t_stack **stack;
+	// t_stack **stack;
+	// t_all 	*stack; 
 	t_stack *new;
 	t_stack *courant;
 	int		tmp;
 	int		i;
 	int		j;
 	
-	*stack = NULL;
+	stack->a = NULL;
 	if(!check_digits(str))
 	{
 		write(2, "Error !",8);
@@ -148,10 +149,11 @@ t_stack **args_in_list(char **str)
 	{
 		tmp = ft_atoi(str[i]);
 		new = ft_lstnew(tmp);
-		ft_lstadd_back(stack, new);
+		ft_lstadd_back(&stack->a, new);
+		stack->size_a++;
 		i++;
 	}
-	return(stack);
+	// printf("this is the size of the stackk a : %d\n", stack->size_a);
 }
 
 int main(int ac, char **av)
@@ -160,18 +162,26 @@ int main(int ac, char **av)
     char	**splited;
     int 	i = 0;
 	int 	j = 0;
-	t_stack	**stack;
+	t_all	stack;
+	// t_stack	**stack;
 	t_stack	*courant;
 	int 	flag;
 	char 	**arg;
 
-	
 	if(ac > 1)
 	{
 		check_max_min(av);
 		arg = joining_args(av+1);
-		stack = args_in_list(arg);
-		courant = *stack;
+		args_in_list(arg, &stack);
+		courant = stack.a;
+		while (courant)
+		{
+			printf("%d\n",courant->content);
+			courant = courant->next;
+		}
+		sa(&stack);
+		printf("after sa\n");
+		courant = stack.a;
 		while (courant)
 		{
 			printf("%d\n",courant->content);
