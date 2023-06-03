@@ -6,13 +6,13 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 20:09:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/02 20:10:06 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/03 17:13:08 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../push_swap.h"
 
-void pa(t_all *stack)
+void pb(t_all *stack)
 {
    stack->b->next = stack->a;
 }

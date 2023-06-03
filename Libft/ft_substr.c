@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include<stdio.h>
-
 
 unsigned long	min(unsigned long a, unsigned long b)
 {

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include<stdlib.h>
 
 static int	ft_wdcount(char *str, char c)
 {

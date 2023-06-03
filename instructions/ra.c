@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 20:10:22 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/02 20:16:38 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/03 21:46:43 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 void ra(t_all *stack)
 {
-    int     temp;
     t_stack *last;
+    t_stack *first;
+    t_stack *second;
 
-    last = ft_lstlast()
-    last->next = stack;
+    first = stack->a;
+    second = stack->a->next;
+    last = ft_lstlast(stack->a);
+    last->next = first;
+    first->next =NULL;
+    stack->a = second;
 }

@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void sa(t_all *stack)
+void sb(t_all *stack)
 {
     int i;
     t_stack *courant;

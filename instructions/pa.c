@@ -16,10 +16,3 @@ void pa(t_all *stack)
 {
    stack->a->next = stack->b;
 }
-
-
-// int main()
-// {
-//     t_all *stack;
-//     pa(stack);
-// }

@@ -6,7 +6,7 @@
 #    By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/30 16:03:04 by ylarhris          #+#    #+#              #
-#    Updated: 2023/06/02 17:23:21 by ylarhris         ###   ########.fr        #
+#    Updated: 2023/06/03 17:21:08 by ylarhris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,9 @@ SRCS 		= ./utils/check_args.c ./utils/check_int.c ./Libft/ft_atoi.c ./Libft/ft_p
 				./Libft/ft_strjoin.c ./Libft/ft_substr.c \
 				./LinkedList/ft_lstadd_back.c ./LinkedList/ft_lstadd_front.c ./LinkedList/ft_lstclear.c ./LinkedList/ft_lstdelone.c \
 				./LinkedList/ft_lstlast.c ./LinkedList/ft_lstnew.c ./LinkedList/ft_lstsize.c ./instructions/sa.c \
+				./instructions/sb.c ./instructions/ss.c ./instructions/ra.c ./instructions/rb.c ./instructions/pa.c ./instructions/pb.c \
+				./instructions/rr.c ./instructions/rra.c ./instructions/rrb.c ./instructions/rrr.c \
+				
 				
 OBJS = ${SRCS:.c=.o}
 
@@ -41,14 +44,14 @@ RED	=	'\033[91m'
 
 
 .c.o	:
-			@echo "Making $<..." 
+			@echo "Making $<..."
 			@$(CC) -c $< -o $(<:.c=.o)
 
 all		:	$(NAME)
 
 $(NAME)	:	$(OBJS)
 			@echo "     → Compiling $(NAME)..."
-			$(CC) $(OBJS) -o $(NAME) -fsanitize=address -g3
+			@$(CC) $(OBJS) -o $(NAME) -fsanitize=address -g3
 			@echo ${GREEN}"***** ***** ***** ***** *** *    **** ****"
 			@sleep 0.1
 			@echo ${GREEN}"*     *   * * * * *   *  *  *    *    *   *" 

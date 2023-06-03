@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 17:17:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/02 17:22:44 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/03 21:50:02 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,16 @@ int	    ft_lstsize(t_stack *lst);
 
 // instructions
 
-void sa(t_all *stack);
+void    sa(t_all *stack);
+void    sb(t_all *stack);
+void    ss(t_all *stack);
+void    pa(t_all *stack);
+void    pb(t_all *stack);
+void    ra(t_all *stack);
+void    rb(t_all *stack);
+void    rr(t_all *stack);
+void    rra(t_all *stack);
+void    rrb(t_all *stack);
+void    rrr(t_all *stack);
 
 #endif

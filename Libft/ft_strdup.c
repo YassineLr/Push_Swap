@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include<stdio.h>
 
 char	*ft_strdup(const char *src)
 {

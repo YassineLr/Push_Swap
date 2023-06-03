@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 17:12:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/02 17:24:14 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/03 21:40:00 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,7 +179,7 @@ int main(int ac, char **av)
 			printf("%d\n",courant->content);
 			courant = courant->next;
 		}
-		sa(&stack);
+		ra(&stack);
 		printf("after sa\n");
 		courant = stack.a;
 		while (courant)
