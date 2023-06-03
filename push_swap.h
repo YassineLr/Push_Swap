@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 17:17:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/03 21:50:02 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/03 22:03:31 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_all
     char    *error;
 }t_all;
 
+//libft
 int	    ft_atoi(const char *s);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putchar_fd(char c, int fd);
@@ -45,21 +46,28 @@ char	*ft_strdup(const char *src);
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlen(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-int     check_int(const char *s);
-void    ft_duplicate(char **str);
-// char    **sotck_in_temp(char **av);
-char    **joining_args(char **av);
+
+//linked lists
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 void	ft_lstadd_front(t_stack **lst, t_stack *new);
 void	ft_lstdelone(t_stack *lst, void (*del)(int));
 void	ft_lstclear(t_stack **lst, void (*del)(int));
-void    args_to_list(char **str, t_all *stack);
 t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_lstnew(int	content);
 int	    ft_lstsize(t_stack *lst);
 
-// instructions
+//check args
+int     check_int(const char *s);
+int     check_digits(char **str);
+void    ft_duplicate(char **str);
+void    check_max_min(char **av);
+int     is_empty(char *str);
 
+//input handling
+char    **joining_args(char **av);
+void    args_to_list(char **str, t_all *stack);
+
+// instructions
 void    sa(t_all *stack);
 void    sb(t_all *stack);
 void    ss(t_all *stack);

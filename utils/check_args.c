@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.c                                       :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 17:12:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/03 21:40:00 by ylarhris         ###   ########.fr       */
+/*   Created: 2023/06/03 21:53:42 by ylarhris          #+#    #+#             */
+/*   Updated: 2023/06/03 21:58:44 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,35 +54,6 @@ void check_max_min(char **av)
 	}
 }
 
-char **joining_args(char **av)
-{
-    char *stocked;
-    char *temp;
-    char **splited;
-	char **tmp;
-    int  i;
-    int  j;
-	int k;
-
-    i = 0;
-	while (av[i])
-		is_empty(av[i++]);
-	i = 0;
-	stocked = NULL;
-    if(!av[i])
-        return(NULL);
-	while (av[i])
-	{
-		stocked = ft_strjoin(stocked, av[i]);		
-		stocked = ft_strjoin(stocked, " ");
-		i++;
-	}
-	splited = NULL;
-	i = 0;
-    splited = ft_split(stocked, ' ');	
-    return(splited);
-}
-
 void ft_duplicate(char **str)
 {
     int i;
@@ -112,7 +83,29 @@ void ft_duplicate(char **str)
     }
 }
 
-bool check_digits(char **str)
+int	check_int(const char *s)
+{
+	int	res;
+	int	i;
+	int	sign;
+
+	res = 0;
+	sign = 1;
+	i = 0;
+	while (s[i] == 32 || (s[i] <= 13 && s[i] >= 9))
+		i++;
+	if (s[i] == '-' || s[i] == '+')
+		i++;
+	while (s[i])
+	{
+		if(s[i] > '9' || s[i] < '0')
+            return (0);
+        i++;
+	}
+	return (1);
+}
+
+int check_digits(char **str)
 {
 	int i;
 
@@ -120,72 +113,8 @@ bool check_digits(char **str)
 	while (str[i])
 	{
 		if(!check_int(str[i]))
-			return(false);
+			return(0);
 		i++;
 	}
-	return (true);
-}
-
-
-void args_in_list(char **str, t_all *stack)
-{
-	// t_stack **stack;
-	// t_all 	*stack; 
-	t_stack *new;
-	t_stack *courant;
-	int		tmp;
-	int		i;
-	int		j;
-	
-	stack->a = NULL;
-	if(!check_digits(str))
-	{
-		write(2, "Error !",8);
-		exit(127);
-	}
-	ft_duplicate(str);
-	i = 0;
-	while (str[i])
-	{
-		tmp = ft_atoi(str[i]);
-		new = ft_lstnew(tmp);
-		ft_lstadd_back(&stack->a, new);
-		stack->size_a++;
-		i++;
-	}
-	// printf("this is the size of the stackk a : %d\n", stack->size_a);
-}
-
-int main(int ac, char **av)
-{
-    char 	*str;
-    char	**splited;
-    int 	i = 0;
-	int 	j = 0;
-	t_all	stack;
-	// t_stack	**stack;
-	t_stack	*courant;
-	int 	flag;
-	char 	**arg;
-
-	if(ac > 1)
-	{
-		check_max_min(av);
-		arg = joining_args(av+1);
-		args_in_list(arg, &stack);
-		courant = stack.a;
-		while (courant)
-		{
-			printf("%d\n",courant->content);
-			courant = courant->next;
-		}
-		ra(&stack);
-		printf("after sa\n");
-		courant = stack.a;
-		while (courant)
-		{
-			printf("%d\n",courant->content);
-			courant = courant->next;
-		}
-	}
+	return (1);
 }
