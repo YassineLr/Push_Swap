@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 22:23:43 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/02 17:21:59 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/07 22:51:27 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 void sa(t_all *stack)
 {
-    int i;
+    int     i;
     t_stack *courant;
-    int tmp;
+    int     tmp;
     
     tmp = stack->a->content;
     stack->a->content = stack->a->next->content;
     stack->a->next->content = tmp;
+    printf("sa\n");
 }
