@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 22:07:15 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/07 22:52:40 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/07 23:05:30 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,13 @@ int main(int ac, char **av)
 		// pb(&stack);
 		// printf("-> bbbbb -> %d\n",stack.b->content);
 		// printf("--->%d\n",min);
-		sort4_5(&stack);
+		// sort4_5(&stack);
 		// courant = stack.a;
+		// pb(&stack);
+		// pb(&stack);
+		// printf("%d\n", stack.size_b);
+		// printf("%d\n", stack.size_a);
+
 		// while (courant)
 		// {
 		// 	printf("%d\n",courant->content);
