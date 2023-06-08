@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 22:33:02 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/07 23:07:16 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/07 23:10:30 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,35 +16,6 @@ void    sort2(t_all *stack)
 {
     if (stack->a->content > stack->a->next->content)
         sa(stack);
-}
-
-
-void	sort_triplet(t_all *stack)
-{
-    int a;
-    int b;
-    int c;
-
-    a = stack->a->content;
-    b = stack->a->next->content;
-    c = stack->a->next->next->content;
-    
-	if (a > b && b < c && a < c)
-		sa(stack);
-	else if (a > b && b > c && a > c)
-	{
-		sa(stack);
-		rra(stack);
-	}
-	else if (a > b && b < c && a > c)
-		ra(stack);
-	else if (a < b && b > c && a < c)
-	{
-		sa(stack);
-		ra(stack);
-	}
-	else if (a < b && b > c && a > c)
-		rra(stack);
 }
 
 int  get_min(t_stack *stack)
@@ -85,6 +56,33 @@ void min_to_the_top(t_all *stack, int min)
     }
 }
 
+void	sort_triplet(t_all *stack)
+{
+    int a;
+    int b;
+    int c;
+
+    a = stack->a->content;
+    b = stack->a->next->content;
+    c = stack->a->next->next->content;
+    
+	if (a > b && b < c && a < c)
+		sa(stack);
+	else if (a > b && b > c && a > c)
+	{
+		sa(stack);
+		rra(stack);
+	}
+	else if (a > b && b < c && a > c)
+		ra(stack);
+	else if (a < b && b > c && a < c)
+	{
+		sa(stack);
+		ra(stack);
+	}
+	else if (a < b && b > c && a > c)
+		rra(stack);
+}
 
 void    sort4_5(t_all *stack)
 {
@@ -97,9 +95,7 @@ void    sort4_5(t_all *stack)
     while (i < iterations)
     {
         min_to_the_top(stack,get_min(stack->a));
-        // printf("%d",stack->a->content);
         pb(stack);
-        // printf("we are in b -> %d\n", stack->b->content);
         i++;
     }
     sort_triplet(stack);

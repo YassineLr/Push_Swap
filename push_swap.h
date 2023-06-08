@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 17:17:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/07 17:10:44 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/07 23:55:21 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int     is_empty(char *str);
 
 //input handling
 char    **joining_args(char **av);
-void    args_to_list(char **str, t_all *stack);
+void    args_in_list(char **str, t_all *stack);
 
 // instructions
 void    sa(t_all *stack);
@@ -85,4 +85,7 @@ void    sort2(t_all *stack);
 int	get_min(t_stack *stack);
 void	compare_triplet(t_all *stack);
 void min_to_the_top(t_all *stack, int min);
+
+int *filling(t_all *stack,int *tab);
+int *sort_in_tab(t_all *stack);
 #endif
