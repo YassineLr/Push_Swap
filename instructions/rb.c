@@ -18,8 +18,10 @@ void rb(t_all *stack)
     t_stack *first;
     t_stack *second;
 
+    if(!stack->b)
+        return ;
     first = stack->b;
-    second = stack->b->next;
+    second = first->next;
     last = ft_lstlast(stack->b);
     last->next = first;
     first->next =NULL;

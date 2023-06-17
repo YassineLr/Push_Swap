@@ -35,6 +35,27 @@ int  get_min(t_stack *stack)
     return (min);
 }
 
+void best_move(t_all *stack, int count)
+{
+    if (count == 0)
+        return ;
+    else if(count == 1)
+        sa(stack);
+    else if(count == 2)
+    {
+        ra(stack);
+        sa(stack);
+    }
+    else if(count == 3)
+    {
+        rra(stack);
+        if (stack->size_a == 5)
+            rra(stack);
+    }
+    else if(count == 4 && stack->size_a == 5)
+        rra(stack);
+}
+
 void min_to_the_top(t_all *stack, int min)
 {
     t_stack *courant;
@@ -49,11 +70,7 @@ void min_to_the_top(t_all *stack, int min)
         count +=1;
         courant = courant->next;
     }
-    while (i < count)
-    {
-        ra(stack);
-        i++;
-    }
+    best_move(stack, count);
 }
 
 void	sort_triplet(t_all *stack)
@@ -94,6 +111,7 @@ void    sort4_5(t_all *stack)
     iterations = stack->size_a - 3;
     while (i < iterations)
     {
+        // printf("this is the min : %d", get_min(stack->a));
         min_to_the_top(stack,get_min(stack->a));
         pb(stack);
         i++;

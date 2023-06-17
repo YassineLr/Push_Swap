@@ -21,8 +21,7 @@ SRCS 		= ./utils/check_args.c ./utils/input_handling.c ./Libft/ft_atoi.c ./Libft
 				./LinkedList/ft_lstlast.c ./LinkedList/ft_lstnew.c ./LinkedList/ft_lstsize.c ./instructions/sa.c \
 				./instructions/sb.c ./instructions/ss.c ./instructions/ra.c ./instructions/rb.c ./instructions/pa.c ./instructions/pb.c \
 				./instructions/rr.c ./instructions/rra.c ./instructions/rrb.c ./instructions/rrr.c ./src/push_swap.c ./src/sorting.c\
-				./src/sorting_big_numbers.c
-				
+				./src/sorting_big_numbers.c ./src/sorting_big_numbers_utils.c				
 				
 OBJS = ${SRCS:.c=.o}
 
@@ -52,7 +51,7 @@ all		:	$(NAME)
 
 $(NAME)	:	$(OBJS)
 			@echo "     → Compiling $(NAME)..."
-			@$(CC) $(OBJS) -o $(NAME) -fsanitize=address -g3
+			@$(CC) $(OBJS) -o $(NAME)
 			@echo ${GREEN}"***** ***** ***** ***** *** *    **** ****"
 			@sleep 0.1
 			@echo ${GREEN}"*     *   * * * * *   *  *  *    *    *   *" 

@@ -14,11 +14,16 @@
 
 void sb(t_all *stack)
 {
-    int i;
-    t_stack *courant;
-    int tmp;
+    t_stack *first;
+    t_stack *second;
+    t_stack  *temp;
     
-    tmp = stack->b->content;
-    stack->b->content = stack->b->next->content;
-    stack->b->next->content = tmp;
+    first = stack->b;
+    second = first->next;
+    temp = second->next;
+    second->next = first;
+    first->next = temp;
+    stack->b = second;
+    // stack->b->next = tmp;
+    printf("sa\n");
 }

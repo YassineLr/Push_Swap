@@ -18,11 +18,13 @@ void ra(t_all *stack)
     t_stack *first;
     t_stack *second;
 
+    if (!stack->a)
+        return ;
     first = stack->a;
-    second = stack->a->next;
+    second = first->next;
     last = ft_lstlast(stack->a);
     last->next = first;
-    first->next =NULL;
     stack->a = second;
-   printf("ra\n");
+    first->next =NULL;
+    printf("ra\n");
 }

@@ -17,7 +17,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
-#include <sys/_types.h>
+// #include <sys/_types.h>
 #include<limits.h>
 
 
@@ -82,10 +82,16 @@ void    rrr(t_all *stack);
 
 // sorting
 void    sort2(t_all *stack);
-int	get_min(t_stack *stack);
+int	    get_min(t_stack *stack);
+int     get_max(t_stack *stack);
 void	compare_triplet(t_all *stack);
-void min_to_the_top(t_all *stack, int min);
+void    best_move(t_all *stack, int count);
+void    min_to_the_top(t_all *stack, int min);
+void	sort_triplet(t_all *stack);
+void    sort4_5(t_all *stack);
 
 int *filling(t_all *stack,int *tab);
 int *sort_in_tab(t_all *stack);
+void	push_from_a_to_b(t_all *stack, int *tab, int start, int end);
+
 #endif

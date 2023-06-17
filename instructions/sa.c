@@ -15,11 +15,16 @@
 void sa(t_all *stack)
 {
     int     i;
-    t_stack *courant;
-    int     tmp;
+    t_stack *first;
+    t_stack *second;
+    t_stack  *temp;
     
-    tmp = stack->a->content;
-    stack->a->content = stack->a->next->content;
-    stack->a->next->content = tmp;
+    first = stack->a;
+    second = first->next;
+    temp = second->next;
+    second->next = first;
+    first->next = temp;
+    stack->a = second;
+    // stack->a->next = tmp;
     printf("sa\n");
 }

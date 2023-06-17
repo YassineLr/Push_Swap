@@ -54,6 +54,8 @@ void args_in_list(char **str, t_all *stack)
 	int		j;
 	
 	stack->a = NULL;
+	stack->size_a = 0;
+	stack->size_b = 0;
 	if(!check_digits(str))
 	{
 		write(2, "Error !",8);
@@ -69,5 +71,5 @@ void args_in_list(char **str, t_all *stack)
 		stack->size_a++;
 		i++;
 	}
-	// printf("this is the size of the stackk a : %d\n", stack->size_a);
+	printf("this is the size of the stackk a : %d\n", stack->size_a);
 }

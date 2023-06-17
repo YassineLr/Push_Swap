@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void pa(t_all *stack)
+void	pa(t_all *stack)
 {
 	t_stack	*tmp;
 
@@ -22,7 +22,7 @@ void pa(t_all *stack)
 	stack->b = stack->b->next;
 	tmp->next = stack->a;
 	stack->a = tmp;
-   stack->size_b--;
-   stack->size_a++;
-   printf("Pa\n");
+	stack->size_a++;
+	stack->size_b--;
+	write(1, "pa\n", 3);
 }

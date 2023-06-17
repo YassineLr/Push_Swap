@@ -22,6 +22,7 @@ void rra(t_all *stack)
     beforelast = stack->a;
     while (beforelast->next->next)
         beforelast = beforelast->next;
+    // printf("%d\n",beforelast->content);
     last = ft_lstlast(stack->a);
     last->next = stack->a;
     beforelast->next = NULL;

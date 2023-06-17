@@ -12,9 +12,9 @@
 
 # include "../push_swap.h"
 
-void pb(t_all *stack)
+void	pb(t_all *stack)
 {
-   t_stack	*tmp;
+	t_stack	*tmp;
 
 	if (stack->a == NULL)
 		return ;
@@ -22,7 +22,7 @@ void pb(t_all *stack)
 	stack->a = stack->a->next;
 	tmp->next = stack->b;
 	stack->b = tmp;
-   stack->size_a--;
-   stack->size_b++;
-   printf("Pb\n");
+	stack->size_a--;
+	stack->size_b++;
+	write(1, "pa\n", 3);
 }

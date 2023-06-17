@@ -54,11 +54,36 @@ int *sort_in_tab(t_all *stack)
         }
         i++;
     }
-    i = 0;
-    while(i < stack->size_a)
-    {
-        printf("%d\n", tab[i]);
-        i++;
-    }
+    // i = 0;
+    // while(i < stack->size_a)
+    // {
+    //     printf("%d\n", tab[i]);
+    //     i++;
+    // }
     return(tab);
+}
+
+void	push_from_a_to_b(t_all *stack, int *tab, int start, int end)
+{
+	int	top;
+
+	while (stack->size_a)
+	{
+		top = stack->a->content;
+		if (top <= tab[start])
+		{
+			pb(stack);
+			rb(stack);
+			start++;
+			end++;
+		}
+		else if (top > tab[start] && top < tab[end])
+		{
+			pb(stack);
+			start++;
+			end++;
+		}
+		else if (top >= tab[end])
+			ra(stack);
+	}
 }
