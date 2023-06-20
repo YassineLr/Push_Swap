@@ -89,9 +89,11 @@ void    best_move(t_all *stack, int count);
 void    min_to_the_top(t_all *stack, int min);
 void	sort_triplet(t_all *stack);
 void    sort4_5(t_all *stack);
+int     get_max_index(t_stack *stack, int max);
 
 int *filling(t_all *stack,int *tab);
 int *sort_in_tab(t_all *stack);
 void	push_from_a_to_b(t_all *stack, int *tab, int start, int end);
+void	push_from_b_to_a(t_all *stack);
 
 #endif

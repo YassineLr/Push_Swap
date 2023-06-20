@@ -27,62 +27,24 @@ int main(int ac, char **av)
 	{
 		arg = joining_args(av+1);
 		args_in_list(arg, stack);
-		// printf("%d", get_min(&stack.a));
-		// min = get_min(stack.a);
-		// min_to_the_top(&stack,min);
-		// sort_triplet(stack);
-		// sort4_5(stack);
-		
-		// sa(&stack);
-		// printf("%d", get_min(&stack.a));
-		// min = get_min(stack.a);
-		// min_to_the_top(&stack,min);
-		// sort_triplet(&stack);
-		// pb(&stack);
-		// printf("-> bbbbb -> %d\n",stack.b->content);
-		printf("%d\n", get_max(stack->a));
-		// printf("--->%d\n",min);
-		// pb(stack);
-		// pa(stack);
-		// pb(&stack);
-		// printf("size b : %d\n", stack->size_b);
-		// printf("size a : %d\n", stack->size_a);
-		// tab = sort_in_tab(stack);
-		// while(i<stack->size_a)
-		// {
-		// 	printf("%d\n",tab[i]);
-		// 	i++;
-		// }
-		// push_from_a_to_b(stack,tab,0,15);
-		// printf("size finale a : %d\n",stack->size_a);
-		// printf("size finale b : %d\n",stack->size_b);
-		// printf("====================\n");
-		// courant = stack->a;
-		// while(courant)
-    	// {
-		// 	printf("%d\n",courant->content);
-		// 	courant = courant->next;
-    	// }
-		// while (courant)
-		// {
-		// 	printf("%d\n",courant->content);
-		// 	courant = courant->next;
-		// }
-		// printf("=====================");
-		// courant1 = stack.b;
-		// while (courant1)
-		// {
-		// 	printf("%d\n",courant1->content);
-		// 	courant1 = courant->next;
-		// }
-		
-        // printf("this is b => %d",stack.b->content);
-		// printf("after sorting\n");
-		// courant = stack.a;
-		// while (courant)
-		// {
-		// 	printf("%d\n",courant->content);
-		// 	courant = courant->next;
-		// }
+		if(stack->size_a == 2)
+			sort2(stack);
+		else if(stack->size_a == 3)
+			sort_triplet(stack);
+		else if(stack->size_a == 4 || stack->size_a == 5)
+			sort4_5(stack);
+		else
+		{
+			tab = sort_in_tab(stack);
+			push_from_a_to_b(stack,tab,0,15);
+			push_from_b_to_a(stack);
+			// printf("%d\n",stack->b->content);
+			courant = stack->a;
+			while(courant)
+    		{
+				printf("%d\n",courant->content);
+				courant = courant->next;
+    		}
+		}
 	}
 }

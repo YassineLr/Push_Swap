@@ -67,6 +67,8 @@ void	push_from_a_to_b(t_all *stack, int *tab, int start, int end)
 {
 	int	top;
 
+    if (stack->size_a < end)
+        end = stack->size_a - 1;
 	while (stack->size_a)
 	{
 		top = stack->a->content;

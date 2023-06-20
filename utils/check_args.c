@@ -118,3 +118,9 @@ int check_digits(char **str)
 	}
 	return (1);
 }
+
+
+void ft_is_sorted(char **str)
+{
+	
+}

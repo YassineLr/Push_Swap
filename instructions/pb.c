@@ -24,5 +24,5 @@ void	pb(t_all *stack)
 	stack->b = tmp;
 	stack->size_a--;
 	stack->size_b++;
-	write(1, "pa\n", 3);
+	write(1, "pb\n", 3);
 }
