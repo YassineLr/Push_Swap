@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 17:12:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/03 22:06:29 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/20 15:13:41 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,5 @@ void args_in_list(char **str, t_all *stack)
 		stack->size_a++;
 		i++;
 	}
-	printf("this is the size of the stackk a : %d\n", stack->size_a);
+	// printf("this is the size of the stackk a : %d\n", stack->size_a);
 }

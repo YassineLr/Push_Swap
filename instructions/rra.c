@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 16:39:29 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/07 22:48:52 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/20 15:09:58 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,5 @@ void rra(t_all *stack)
     last->next = stack->a;
     beforelast->next = NULL;
     stack->a = last;
-   printf("rra\n");
-    
+   printf("rra\n");  
 }

@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 17:30:03 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/07 23:04:29 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/20 15:19:29 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	pa(t_all *stack)
 	stack->a = tmp;
 	stack->size_a++;
 	stack->size_b--;
-	write(1, "pa\n", 3);
+	printf("pa\n");
 }

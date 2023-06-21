@@ -6,7 +6,7 @@
 #    By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/30 16:03:04 by ylarhris          #+#    #+#              #
-#    Updated: 2023/06/07 23:43:27 by ylarhris         ###   ########.fr        #
+#    Updated: 2023/06/20 20:24:14 by ylarhris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,13 +45,13 @@ RED	=	'\033[91m'
 
 .c.o	:
 			@echo "Making $<..."
-			@$(CC) -c $< -o $(<:.c=.o)
+			@$(CC) -c $< -o $(<:.c=.o) 
 
 all		:	$(NAME)
 
 $(NAME)	:	$(OBJS)
 			@echo "     → Compiling $(NAME)..."
-			@$(CC) $(OBJS) -o $(NAME)
+			@$(CC) $(OBJS) -o $(NAME) -fsanitize=address -g3
 			@echo ${GREEN}"***** ***** ***** ***** *** *    **** ****"
 			@sleep 0.1
 			@echo ${GREEN}"*     *   * * * * *   *  *  *    *    *   *" 

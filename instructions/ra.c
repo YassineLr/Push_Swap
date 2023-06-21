@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 20:10:22 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/07 22:48:42 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/21 12:09:17 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void ra(t_all *stack)
     t_stack *first;
     t_stack *second;
 
-    if (!stack->a)
+    if (!stack->a || stack->size_a < 2)
         return ;
     first = stack->a;
     second = first->next;

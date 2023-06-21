@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 03:15:36 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/05/31 14:06:44 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/21 12:26:59 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_stack	*ft_lstlast(t_stack *lst)
 	if (!lst)
 		return (NULL);
 	courant = lst;
-	while (courant -> next)
-		courant = courant -> next;
+	while (courant->next)
+		courant = courant->next;
 	return (courant);
 }

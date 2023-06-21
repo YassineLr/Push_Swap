@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 21:47:51 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/03 21:48:20 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/20 15:10:05 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ void rrb(t_all *stack)
     last->next = stack->b;
     beforelast->next = NULL;
     stack->b = last;
+    printf("rrb\n");
 }

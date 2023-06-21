@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 17:25:01 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/02 17:27:57 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/20 15:10:13 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void sb(t_all *stack)
     first->next = temp;
     stack->b = second;
     // stack->b->next = tmp;
-    printf("sa\n");
+    printf("sb\n");
 }
