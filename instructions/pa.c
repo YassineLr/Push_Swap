@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 17:30:03 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/20 15:19:29 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/21 18:33:45 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ void	pa(t_all *stack)
 	stack->b = stack->b->next;
 	tmp->next = stack->a;
 	stack->a = tmp;
-	stack->size_a++;
+	if(stack->size_b == 0)
+		stack->a->next = NULL;
 	stack->size_b--;
+	stack->size_a++;
 	printf("pa\n");
 }

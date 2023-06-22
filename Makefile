@@ -6,7 +6,7 @@
 #    By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/30 16:03:04 by ylarhris          #+#    #+#              #
-#    Updated: 2023/06/20 20:24:14 by ylarhris         ###   ########.fr        #
+#    Updated: 2023/06/21 14:12:14 by ylarhris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,17 +52,6 @@ all		:	$(NAME)
 $(NAME)	:	$(OBJS)
 			@echo "     → Compiling $(NAME)..."
 			@$(CC) $(OBJS) -o $(NAME) -fsanitize=address -g3
-			@echo ${GREEN}"***** ***** ***** ***** *** *    **** ****"
-			@sleep 0.1
-			@echo ${GREEN}"*     *   * * * * *   *  *  *    *    *   *" 
-			@sleep 0.1
-			@echo ${GREEN}"*     *   * * * * *****  *  *    **** *   *"
-			@sleep 0.1
-			@echo ${GREEN}"*     *   * * * * *      *  *    *    *   *" 
-			@sleep 0.1
-			@echo ${GREEN}"***** ***** * * * *     *** **** **** ****" 
-
-
 clean	:
 			@echo ${RED} "     - Removing object files..."
 			@$(RM) $(OBJS) $(BOBJS)

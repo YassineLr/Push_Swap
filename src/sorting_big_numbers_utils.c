@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sorting_big_numbers_utils.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/21 15:41:34 by ylarhris          #+#    #+#             */
+/*   Updated: 2023/06/21 18:35:23 by ylarhris         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h" 
 
 int  get_max(t_stack *stack)
@@ -5,6 +17,8 @@ int  get_max(t_stack *stack)
     t_stack *courant;
     int     max;
 
+    if(!stack)
+        printf("here\n");
     courant = stack;
     max = courant->content;
     while (courant)
@@ -37,7 +51,7 @@ void	push_from_b_to_a(t_all *stack)
 {
 	int	max_index;
 
-    printf("from b to a:\n");
+    // printf("from b to a:\n");
 
 	while (stack->size_b)
 	{

@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 23:12:26 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/21 12:29:53 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/21 17:56:03 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ int *sort_in_tab(t_all *stack)
 
 void	push_from_a_to_b(t_all *stack, int *tab, int start, int end)
 {
-	int	top;
-
+    int     top;
+    
     if (stack->size_a < end)
         end = stack->size_a - 1;
 	while (stack->size_a)
@@ -74,13 +74,16 @@ void	push_from_a_to_b(t_all *stack, int *tab, int start, int end)
 		top = stack->a->content;
 		if (top <= tab[start])
 		{
+            
 			pb(stack);
 			rb(stack);
+            // printf("[%d]]\n", stack->b->content);
 			start++;
 			end++;
 		}
 		else if (top > tab[start] && top < tab[end])
 		{
+            // printf("[%d]]\n", stack->b->content);
 			pb(stack);
 			start++;
 			end++;
@@ -88,4 +91,10 @@ void	push_from_a_to_b(t_all *stack, int *tab, int start, int end)
 		else if (top >= tab[end])
 			ra(stack);
 	}
+    // while (stack->b)
+    // {
+    //     printf("%d\n", stack->b->content);
+    //     stack->b = stack->b->next;
+    // }
+    // exit(1);
 }
