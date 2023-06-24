@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 23:12:26 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/21 17:56:03 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/24 03:58:04 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int *sort_in_tab(t_all *stack)
     int tmp;
 
     i = 0;
-    // printf("in sorting !");
     tab = (int*)malloc(stack->size_a*sizeof(int));
     tab = filling(stack, tab);
     while (i < stack->size_a)
@@ -54,12 +53,6 @@ int *sort_in_tab(t_all *stack)
         }
         i++;
     }
-    // i = 0;
-    // while(i < stack->size_a)
-    // {
-    //     printf("%d\n", tab[i]);
-    //     i++;
-    // }
     return(tab);
 }
 
@@ -75,26 +68,18 @@ void	push_from_a_to_b(t_all *stack, int *tab, int start, int end)
 		if (top <= tab[start])
 		{
             
-			pb(stack);
-			rb(stack);
-            // printf("[%d]]\n", stack->b->content);
+			pb(stack, 1);
+			rb(stack, 1);
 			start++;
 			end++;
 		}
 		else if (top > tab[start] && top < tab[end])
 		{
-            // printf("[%d]]\n", stack->b->content);
-			pb(stack);
+			pb(stack, 1);
 			start++;
 			end++;
 		}
 		else if (top >= tab[end])
-			ra(stack);
+			ra(stack, 1);
 	}
-    // while (stack->b)
-    // {
-    //     printf("%d\n", stack->b->content);
-    //     stack->b = stack->b->next;
-    // }
-    // exit(1);
 }

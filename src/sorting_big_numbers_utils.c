@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 15:41:34 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/21 18:35:23 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/24 03:56:58 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,15 @@ void	push_from_b_to_a(t_all *stack)
 {
 	int	max_index;
 
-    // printf("from b to a:\n");
-
 	while (stack->size_b)
 	{
 		max_index = get_max_index(stack->b, get_max(stack->b));
 		if (max_index <= stack->size_b / 2)
 			while (get_max_index(stack->b,get_max(stack->b)))
-				rb(stack);
+				rb(stack, 1);
 		else
 			while (get_max_index(stack->b, get_max(stack->b)))
-				rrb(stack);
-		pa(stack);
+				rrb(stack, 1);
+		pa(stack, 1);
 	}
 }

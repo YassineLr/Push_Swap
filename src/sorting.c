@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 22:33:02 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/07 23:10:30 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/24 04:06:37 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void    sort2(t_all *stack)
 {
     if (stack->a->content > stack->a->next->content)
-        sa(stack);
+        sa(stack,1);
 }
 
 int  get_min(t_stack *stack)
@@ -31,7 +31,6 @@ int  get_min(t_stack *stack)
             min = courant->content;
         courant = courant->next;
     }
-    // printf("===> %d\n", min);
     return (min);
 }
 
@@ -40,20 +39,20 @@ void best_move(t_all *stack, int count)
     if (count == 0)
         return ;
     else if(count == 1)
-        sa(stack);
+        sa(stack,1);
     else if(count == 2)
     {
-        ra(stack);
-        sa(stack);
+        ra(stack,1);
+        sa(stack,1);
     }
     else if(count == 3)
     {
-        rra(stack);
+        rra(stack,1);
         if (stack->size_a == 5)
-            rra(stack);
+            rra(stack,1);
     }
     else if(count == 4 && stack->size_a == 5)
-        rra(stack);
+        rra(stack,1);
 }
 
 void min_to_the_top(t_all *stack, int min)
@@ -84,43 +83,42 @@ void	sort_triplet(t_all *stack)
     c = stack->a->next->next->content;
     
 	if (a > b && b < c && a < c)
-		sa(stack);
+		sa(stack,1);
 	else if (a > b && b > c && a > c)
 	{
-		sa(stack);
-		rra(stack);
+		sa(stack,1);
+		rra(stack,1);
 	}
 	else if (a > b && b < c && a > c)
-		ra(stack);
+		ra(stack,1);
 	else if (a < b && b > c && a < c)
 	{
-		sa(stack);
-		ra(stack);
+		sa(stack,1);
+		ra(stack,1);
 	}
 	else if (a < b && b > c && a > c)
-		rra(stack);
+		rra(stack,1);
 }
 
 void    sort4_5(t_all *stack)
 {
     int     iterations;
     int     i;
-    t_stack courant;
 
     i = 0;
     iterations = stack->size_a - 3;
     while (i < iterations)
     {
-        // printf("this is the min : %d", get_min(stack->a));
         min_to_the_top(stack,get_min(stack->a));
-        pb(stack);
+        if(stack)
+        pb(stack,1);
         i++;
     }
     sort_triplet(stack);
     i = 0;
     while (i < iterations)
     {
-        pa(stack);
+        pa(stack,1);
         i++;
     }
 }

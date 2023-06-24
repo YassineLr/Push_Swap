@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 21:53:42 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/03 21:58:44 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/24 04:01:18 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,15 @@ int is_empty(char *str)
 	int i;
 	
 	i = 0;
-	if (str[i] == '\0')
-	{
-		write(2,"Error!\n",8);
-		exit(127);
-	}
-	if (!str)
-	{
-		write(2,"Error!\n",8);
-		exit(127);
-	}
+	if (!str || str[i] == '\0')
+		print_error();
 	while (str[i])
 	{
 		if(str[i] <= '9' && str[i] >= '0')
 			return(1);
 		i++;
 	}
-	write(2,"Error!\n",8);
-	exit(127);
+	print_error();
 	return(0);
 }
 
@@ -46,10 +37,7 @@ void check_max_min(char **av)
 	while (av[i])
 	{
 		if (ft_atoi(av[i]) > INT_MAX || ft_atoi(av[i]) < INT_MIN)
-		{
-			write(2, "ERROR!",7);
-			exit(127);
-		}
+			print_error();
 		i++;
 	}
 }
@@ -73,10 +61,7 @@ void ft_duplicate(char **str)
         {
 			to_compare = ft_atoi(str[j]);
             if(to_compare == compare_with)
-            {
-                write(2,"error\n",7);
-                exit(127);
-            }
+            	print_error();
             j++;
         }
         i++;
@@ -117,10 +102,4 @@ int check_digits(char **str)
 		i++;
 	}
 	return (1);
-}
-
-
-void ft_is_sorted(char **str)
-{
-	
 }

@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sb.c                                               :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 17:25:01 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/24 04:54:53 by ylarhris         ###   ########.fr       */
+/*   Created: 2022/11/13 20:44:57 by ylarhris          #+#    #+#             */
+/*   Updated: 2023/06/23 23:25:49 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void sb(t_all *stack,int checker)
-{
-    t_stack *first;
-    t_stack *second;
-    t_stack  *temp;
-    
-    if(stack->size_b < 2)
-        return ;
-    first = stack->b;
-    second = first->next;
-    temp = second->next;
-    second->next = first;
-    first->next = temp;
-    stack->b = second;
-    if(checker)
-		write(1,"sa\n",3);
-}
+
+// #ifndef BUFFER_SIZE 
+#define BUFFER_SIZE 10
+# include <stdio.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <limits.h>
+# include <stddef.h>
+# include "../push_swap.h"
+
+char	*read_line(int fd, char *str);
+char	*till_new_line(char *str);
+char	*after_new_line(char *str);
+char	*get_next_line(int fd);
+#endif

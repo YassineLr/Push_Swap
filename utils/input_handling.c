@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 17:12:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/20 15:13:41 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/24 04:41:13 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ char **joining_args(char **av)
     char *stocked;
     char *temp;
     char **splited;
-	char **tmp;
     int  i;
-    int  j;
-	int k;
 
     i = 0;
 	while (av[i])
@@ -37,7 +34,8 @@ char **joining_args(char **av)
 	}
 	splited = NULL;
 	i = 0;
-    splited = ft_split(stocked, ' ');	
+    splited = ft_split(stocked, ' ');
+	ft_is_sorted(splited);	
     return(splited);
 }
 
@@ -57,10 +55,7 @@ void args_in_list(char **str, t_all *stack)
 	stack->size_a = 0;
 	stack->size_b = 0;
 	if(!check_digits(str))
-	{
-		write(2, "Error !",8);
-		exit(127);
-	}
+		print_error();
 	ft_duplicate(str);
 	i = 0;
 	while (str[i])

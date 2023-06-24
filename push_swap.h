@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 17:17:35 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/07 23:55:21 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/24 04:19:39 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <string.h>
 // #include <sys/_types.h>
 #include<limits.h>
+#include "./get_next_line/get_next_line.h"
 
 
 typedef struct s_stack
@@ -45,7 +46,9 @@ char	**ft_split(char *str, char sep);
 char	*ft_strdup(const char *src);
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlen(const char *str);
+int		ft_strchr(char *str, char ch);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+int	    ft_strcmp(const char *str1, const char *str2);
 
 //linked lists
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
@@ -62,23 +65,25 @@ int     check_digits(char **str);
 void    ft_duplicate(char **str);
 void    check_max_min(char **av);
 int     is_empty(char *str);
+int    ft_is_sorted(char **str);
+void   print_error();
 
 //input handling
 char    **joining_args(char **av);
 void    args_in_list(char **str, t_all *stack);
 
 // instructions
-void    sa(t_all *stack);
-void    sb(t_all *stack);
-void    ss(t_all *stack);
-void    pa(t_all *stack);
-void    pb(t_all *stack);
-void    ra(t_all *stack);
-void    rb(t_all *stack);
-void    rr(t_all *stack);
-void    rra(t_all *stack);
-void    rrb(t_all *stack);
-void    rrr(t_all *stack);
+void    sa(t_all *stack, int checker);
+void    sb(t_all *stack, int checker);
+void    ss(t_all *stack, int checker);
+void    pa(t_all *stack, int checker);
+void    pb(t_all *stack, int checker);
+void    ra(t_all *stack, int checker);
+void    rb(t_all *stack, int checker);
+void    rr(t_all *stack, int checker);
+void    rra(t_all *stack, int checker);
+void    rrb(t_all *stack, int checker);
+void    rrr(t_all *stack, int checker);
 
 // sorting
 void    sort2(t_all *stack);
