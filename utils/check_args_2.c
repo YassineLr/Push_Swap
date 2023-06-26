@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 04:01:24 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/24 04:49:55 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/26 03:42:42 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_is_sorted(char **str)
 		}
 		i++;
 	}
-	print_error();
+	exit(0);
 	return (0);
 }
 
