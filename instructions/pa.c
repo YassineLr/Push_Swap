@@ -22,10 +22,10 @@ void	pa(t_all *stack, int checker)
 	stack->b = stack->b->next;
 	tmp->next = stack->a;
 	stack->a = tmp;
-	if(stack->size_b == 0)
+	if (stack->size_b == 0)
 		stack->a->next = NULL;
 	stack->size_b--;
 	stack->size_a++;
-	if(checker)
-		write(1,"pa\n",3);
+	if (checker)
+		write(1, "pa\n", 3);
 }

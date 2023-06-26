@@ -92,5 +92,6 @@ char	**ft_split(char *str, char sep)
 		i += ft_lcount(i, str, sep);
 	}
 	s_str[j] = NULL;
+	free(str);
 	return (s_str);
 }

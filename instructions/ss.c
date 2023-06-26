@@ -12,8 +12,8 @@
 
 #include "../push_swap.h"
 
-void ss(t_all *stack, int checker)
+void	ss(t_all *stack, int checker)
 {
-    sa(stack, checker);
-    sb(stack, checker);
+	sa(stack, checker);
+	sb(stack, checker);
 }

@@ -12,8 +12,8 @@
 
 #include "../push_swap.h"
 
-void rrr(t_all *stack, int checker)
+void	rrr(t_all *stack, int checker)
 {
-    rra(stack, checker);
-    rrb(stack, checker);
+	rra(stack, checker);
+	rrb(stack, checker);
 }

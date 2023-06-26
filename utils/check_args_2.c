@@ -10,33 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../push_swap.h"
+#include "../push_swap.h"
 
-int ft_is_sorted(char **str)
+int	ft_is_sorted(char **str)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
-	if(!str[i+1])
+	if (!str[i + 1])
 		return (1);
-	while(str[i])
+	while (str[i])
 	{
-		j = i +1;
+		j = i + 1;
 		while (str[j])
 		{
 			if (ft_atoi(str[i]) >= ft_atoi(str[j]))
-				return(1);
+				return (1);
 			j++;
 		}
 		i++;
 	}
-	print_error();	
-	return(0);
+	print_error();
+	return (0);
 }
 
-void print_error()
+void	print_error(void)
 {
-	write(2,"Error\n",6);
+	write(2, "Error\n", 6);
 	exit(127);
 }

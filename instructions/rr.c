@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../push_swap.h"
+#include "../push_swap.h"
 
-void rr(t_all *stack,int checker)
+void	rr(t_all *stack, int checker)
 {
-    ra(stack,checker);
-    rb(stack, checker);
+	ra(stack, checker);
+	rb(stack, checker);
 }

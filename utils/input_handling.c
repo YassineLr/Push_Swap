@@ -12,59 +12,49 @@
 
 #include "../push_swap.h"
 
-char **joining_args(char **av)
+char	**joining_args(char **av)
 {
-    char *stocked;
-    char *temp;
-    char **splited;
-    int  i;
+	char	*stocked;
+	char	*temp;
+	char	**splited;
+	int		i;
 
-    i = 0;
+	i = 0;
 	while (av[i])
 		is_empty(av[i++]);
 	i = 0;
 	stocked = NULL;
-    if(!av[i])
-        return(NULL);
+	if (!av[i])
+		return (NULL);
 	while (av[i])
 	{
-		stocked = ft_strjoin(stocked, av[i]);		
+		stocked = ft_strjoin(stocked, av[i]);
 		stocked = ft_strjoin(stocked, " ");
 		i++;
 	}
 	splited = NULL;
 	i = 0;
-    splited = ft_split(stocked, ' ');
-	ft_is_sorted(splited);	
-    return(splited);
+	splited = ft_split(stocked, ' ');
+	return (splited);
 }
 
-
-
-void args_in_list(char **str, t_all *stack)
+void	args_in_list(char **str, t_all *stack)
 {
-	// t_stack **stack;
-	// t_all 	*stack; 
-	t_stack *new;
-	t_stack *courant;
-	int		tmp;
+	t_stack	*new;
 	int		i;
-	int		j;
-	
+
 	stack->a = NULL;
 	stack->size_a = 0;
 	stack->size_b = 0;
-	if(!check_digits(str))
+	if (!check_digits(str))
 		print_error();
 	ft_duplicate(str);
 	i = 0;
 	while (str[i])
 	{
-		tmp = ft_atoi(str[i]);
-		new = ft_lstnew(tmp);
+		new = ft_lstnew(ft_atoi(str[i]));
 		ft_lstadd_back(&stack->a, new);
 		stack->size_a++;
 		i++;
 	}
-	// printf("this is the size of the stackk a : %d\n", stack->size_a);
 }

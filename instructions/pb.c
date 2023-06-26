@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../push_swap.h"
+#include "../push_swap.h"
 
 void	pb(t_all *stack, int checker)
 {
@@ -22,10 +22,10 @@ void	pb(t_all *stack, int checker)
 	stack->a = stack->a->next;
 	tmp->next = stack->b;
 	stack->b = tmp;
-	if(stack->size_b == 0)
+	if (stack->size_b == 0)
 		stack->b->next = NULL;
 	stack->size_a--;
 	stack->size_b++;
-	if(checker)
-		write(1,"pb\n",3);
+	if (checker)
+		write(1, "pb\n", 3);
 }

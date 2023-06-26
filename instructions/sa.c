@@ -12,21 +12,21 @@
 
 #include "../push_swap.h"
 
-void sa(t_all *stack, int checker)
+void	sa(t_all *stack, int checker)
 {
-    int     i;
-    t_stack *first;
-    t_stack *second;
-    t_stack  *temp;
-    
-    if(stack->size_a < 2)
-        return ;
-    first = stack->a;
-    second = first->next;
-    temp = second->next;
-    second->next = first;
-    first->next = temp;
-    stack->a = second;
-    if(checker)
-		write(1,"sa\n",3);
+	int		i;
+	t_stack	*first;
+	t_stack	*second;
+	t_stack	*temp;
+
+	if (stack->size_a < 2)
+		return ;
+	first = stack->a;
+	second = first->next;
+	temp = second->next;
+	second->next = first;
+	first->next = temp;
+	stack->a = second;
+	if (checker)
+		write(1, "sa\n", 3);
 }

@@ -12,26 +12,26 @@
 
 #include "../push_swap.h"
 
-int is_empty(char *str)
+int	is_empty(char *str)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	if (!str || str[i] == '\0')
 		print_error();
 	while (str[i])
 	{
-		if(str[i] <= '9' && str[i] >= '0')
-			return(1);
+		if (str[i] <= '9' && str[i] >= '0')
+			return (1);
 		i++;
 	}
 	print_error();
-	return(0);
+	return (0);
 }
 
-void check_max_min(char **av)
+void	check_max_min(char **av)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (av[i])
@@ -42,30 +42,30 @@ void check_max_min(char **av)
 	}
 }
 
-void ft_duplicate(char **str)
+void	ft_duplicate(char **str)
 {
-    int i;
-    int j;
-	int to_compare;
-	int compare_with;
-    char *temp;
+	int		i;
+	int		j;
+	int		to_compare;
+	int		compare_with;
+	char	*temp;
 
-    i = 0;
-    if(!str)
-        return ;
-    while (str[i])
-    {
+	i = 0;
+	if (!str)
+		return ;
+	while (str[i])
+	{
 		compare_with = ft_atoi(str[i]);
-        j = i+1;
-        while (str[j])
-        {
+		j = i + 1;
+		while (str[j])
+		{
 			to_compare = ft_atoi(str[j]);
-            if(to_compare == compare_with)
-            	print_error();
-            j++;
-        }
-        i++;
-    }
+			if (to_compare == compare_with)
+				print_error();
+			j++;
+		}
+		i++;
+	}
 }
 
 int	check_int(const char *s)
@@ -83,22 +83,22 @@ int	check_int(const char *s)
 		i++;
 	while (s[i])
 	{
-		if(s[i] > '9' || s[i] < '0')
-            return (0);
-        i++;
+		if (s[i] > '9' || s[i] < '0')
+			return (0);
+		i++;
 	}
 	return (1);
 }
 
-int check_digits(char **str)
+int	check_digits(char **str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if(!check_int(str[i]))
-			return(0);
+		if (!check_int(str[i]))
+			return (0);
 		i++;
 	}
 	return (1);

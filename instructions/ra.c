@@ -12,20 +12,20 @@
 
 #include "../push_swap.h"
 
-void ra(t_all *stack, int checker)
+void	ra(t_all *stack, int checker)
 {
-    t_stack *last;
-    t_stack *first;
-    t_stack *second;
+	t_stack	*last;
+	t_stack	*first;
+	t_stack	*second;
 
-    if (!stack->a || stack->size_a < 2)
-        return ;
-    first = stack->a;
-    second = first->next;
-    last = ft_lstlast(stack->a);
-    last->next = first;
-    stack->a = second;
-    first->next =NULL;
-    if(checker)
-		write(1,"ra\n",3);
+	if (!stack->a || stack->size_a < 2)
+		return ;
+	first = stack->a;
+	second = first->next;
+	last = ft_lstlast(stack->a);
+	last->next = first;
+	stack->a = second;
+	first->next = NULL;
+	if (checker)
+		write(1, "ra\n", 3);
 }

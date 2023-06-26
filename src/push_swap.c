@@ -12,30 +12,29 @@
 
 #include "../push_swap.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_all	*stack;
-	char 	**arg;
-	int 	*tab;
+	char	**arg;
 
-	if(ac > 1)
+	if (ac > 2)
 	{
-		stack = (t_all*)malloc(sizeof(t_all));
-		arg = joining_args(av+1);
+		stack = (t_all *) malloc (sizeof(t_all));
+		arg = joining_args(av + 1);
+		ft_is_sorted(arg);
 		args_in_list(arg, stack);
-		if(stack->size_a == 2)
-			sort2(stack);
-		else if(stack->size_a == 3)
+		if (stack->size_a == 2)
+			sort2 (stack);
+		else if (stack->size_a == 3)
 			sort_triplet(stack);
-		else if(stack->size_a == 4 || stack->size_a == 5)
+		else if (stack->size_a == 4 || stack->size_a == 5)
 			sort4_5(stack);
 		else
 		{
-			tab = sort_in_tab(stack);
-			if (stack->size_a > 100)
-				push_from_a_to_b(stack,tab,0,30);
+			if (stack->size_a < 100)
+				push_from_a_to_b(stack, sort_in_tab(stack), 0, 15);
 			else
-				push_from_a_to_b(stack,tab,0,15);
+				push_from_a_to_b(stack, sort_in_tab(stack), 0, 40);
 			push_from_b_to_a(stack);
 		}
 	}

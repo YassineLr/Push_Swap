@@ -12,8 +12,7 @@
 
 #include "../push_swap.h"
 
-
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	size_t	i;
 	size_t	j;
@@ -21,8 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	if(!s1)
-		return(ft_strdup(s2));
+	if (!s1)
+		return (ft_strdup(s2));
 	j_str = (char *) malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!j_str)
 		return (NULL);
@@ -37,5 +36,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		j++;
 	}
 	j_str[i + j] = '\0';
+	free(s1);
 	return (j_str);
 }

@@ -11,14 +11,14 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
- 
+
 int	ft_strcmp(const char *str1, const char *str2)
 {
 	size_t	i;
 
 	i = 0;
-    if(!str1 || !str2)
-        return(1);
+	if (!str1 || !str2)
+		return (1);
 	while ((str1[i] != '\0' || str2[i] != '\0'))
 	{
 		if ((unsigned char)str1[i] > (unsigned char)str2[i])
