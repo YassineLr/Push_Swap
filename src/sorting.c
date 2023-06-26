@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 22:33:02 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/24 04:06:37 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/26 01:50:11 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	sort2(t_all *stack)
 {
+	if (stack->size_a == 1)
+		exit(0);
 	if (stack->a->content > stack->a->next->content)
 		sa(stack, 1);
 }

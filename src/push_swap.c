@@ -6,7 +6,7 @@
 /*   By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 22:07:15 by ylarhris          #+#    #+#             */
-/*   Updated: 2023/06/23 23:05:23 by ylarhris         ###   ########.fr       */
+/*   Updated: 2023/06/26 01:48:56 by ylarhris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ int	main(int ac, char **av)
 	t_all	*stack;
 	char	**arg;
 
-	if (ac > 2)
+	if (ac > 1)
 	{
 		stack = (t_all *) malloc (sizeof(t_all));
 		arg = joining_args(av + 1);
 		ft_is_sorted(arg);
 		args_in_list(arg, stack);
-		if (stack->size_a == 2)
+		if (stack->size_a == 2 || stack->size_a == 1)
 			sort2 (stack);
 		else if (stack->size_a == 3)
 			sort_triplet(stack);

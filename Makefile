@@ -6,7 +6,7 @@
 #    By: ylarhris <ylarhris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/30 16:03:04 by ylarhris          #+#    #+#              #
-#    Updated: 2023/06/26 00:33:45 by ylarhris         ###   ########.fr        #
+#    Updated: 2023/06/26 01:46:02 by ylarhris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,7 @@ all		:	$(NAME)
 $(NAME)	:	$(OBJS)
 			@echo "     → Compiling $(NAME)..."
 			@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
 bonus	: $(BNAME)
 
 $(BNAME):		$(BOBJS)
